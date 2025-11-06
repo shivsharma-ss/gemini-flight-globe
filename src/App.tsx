@@ -3,7 +3,7 @@ import FilterPanel from './components/FilterPanel';
 import GlobeVisualization from './components/GlobeVisualization';
 import PriceAlertModal from './components/PriceAlertModal';
 import Toast from './components/Toast';
-import { fetchFlights } from './services/geminiService';
+import { fetchFlights } from './services/flightApiService';
 import type { Flight, Filters, PriceAlert } from './types';
 import { INITIAL_FLIGHTS } from './constants';
 import PlaneIcon from './components/icons/PlaneIcon';
@@ -69,8 +69,8 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3 text-white bg-slate-900/50 backdrop-blur-sm p-3 rounded-xl border border-slate-700">
             <PlaneIcon className="h-8 w-8 text-cyan-400" />
             <div>
-                <h1 className="text-xl font-bold">Gemini Flight Globe</h1>
-                <p className="text-xs text-slate-400">AI-Powered Flight Visualization</p>
+                <h1 className="text-xl font-bold">Flight Globe Explorer</h1>
+                <p className="text-xs text-slate-400">Live route data with real flight schedules</p>
             </div>
           </div>
       </div>
