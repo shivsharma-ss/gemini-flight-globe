@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@google/genai": "^1.0.0",
     "brace-expansion": "^2.0.2",
     "cross-spawn": "^7.0.5",
     "esbuild": "^0.25.0",

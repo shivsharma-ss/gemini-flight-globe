@@ -88,18 +88,42 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onSearch, isLoading }) => {
         <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col">
           <div className="space-y-6 flex-grow">
             <div>
-              <label htmlFor="origin" className="block text-sm font-medium text-gray-300">Origin</label>
-              <input type="text" name="origin" id="origin" value={filters.origin} onChange={handleChange} placeholder="e.g., New York" className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"/>
+              <label htmlFor="origin" className="block text-sm font-medium text-gray-300">Origin airport (IATA or city)</label>
+              <input
+                type="text"
+                name="origin"
+                id="origin"
+                value={filters.origin}
+                onChange={handleChange}
+                placeholder="e.g., JFK or New York"
+                className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"
+              />
             </div>
 
             <div>
-              <label htmlFor="destination" className="block text-sm font-medium text-gray-300">Destination</label>
-              <input type="text" name="destination" id="destination" value={filters.destination} onChange={handleChange} placeholder="e.g., London" className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"/>
+              <label htmlFor="destination" className="block text-sm font-medium text-gray-300">Destination airport (IATA or city)</label>
+              <input
+                type="text"
+                name="destination"
+                id="destination"
+                value={filters.destination}
+                onChange={handleChange}
+                placeholder="e.g., LHR or London"
+                className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"
+              />
             </div>
 
             <div>
-              <label htmlFor="airline" className="block text-sm font-medium text-gray-300">Airline</label>
-              <input type="text" name="airline" id="airline" value={filters.airline} onChange={handleChange} placeholder="e.g., Gemini Airways" className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"/>
+              <label htmlFor="airline" className="block text-sm font-medium text-gray-300">Airline (optional)</label>
+              <input
+                type="text"
+                name="airline"
+                id="airline"
+                value={filters.airline}
+                onChange={handleChange}
+                placeholder="e.g., Delta"
+                className="mt-1 block w-full bg-slate-800/70 border border-slate-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-cyan-500 focus:border-cyan-500"
+              />
             </div>
             
             <div>
@@ -152,12 +176,12 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onSearch, isLoading }) => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Generating...
+                Searching...
               </>
             ) : (
               <>
                 <SearchIcon className="h-5 w-5" />
-                Find Flights
+                Search Flights
               </>
             )}
           </button>
