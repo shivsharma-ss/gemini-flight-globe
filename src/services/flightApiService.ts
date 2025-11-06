@@ -26,8 +26,16 @@ const resolvedEnv = () => {
   };
 };
 
-const formatDateParam = (date: Date | null): string | undefined =>
-  date ? new Date(date).toISOString().split('T')[0] : undefined;
+const formatDateParam = (date: Date | null): string | undefined => {
+  if (!date) return undefined;
+
+  const localDate = new Date(date);
+  const year = localDate.getFullYear();
+  const month = String(localDate.getMonth() + 1).padStart(2, '0');
+  const day = String(localDate.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+};
 
 type AirportLookupResult = {
   airport_name?: string;
